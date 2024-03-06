@@ -9,7 +9,10 @@ const App = () => {
     fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
       .then(response => response.json())
       .then(data => setEmployees(data))
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        alert('Failed to fetch data.');
+      });
   }, []);
 
 
